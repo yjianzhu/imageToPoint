@@ -5,12 +5,13 @@
 class image
 {
 private:
+    /* data */
+public:
+    color *pixels;
     int width,
         height,
         frames;
     short *delays;
-    /* data */
-public:
     image(const char * file/* args */);
     ~image();
 };
