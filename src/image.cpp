@@ -3,6 +3,7 @@
 #include "stb_image.h"
 //read image from file
 
+//******************************************function:get pixel color from char*.********************************
 void setPixelGray(color *pixel, unsigned char* ptr) {
         pixel->r = pixel->g = pixel->b = ptr[0];
         pixel->a = 255;
@@ -12,6 +13,7 @@ void setPixelGrayAlpha(color *pixel, unsigned char* ptr) {
         pixel->r = pixel->g = pixel->b = ptr[0];
         pixel->a = ptr[1];
 }
+
 void setPixelRGB(color *pixel, unsigned char* ptr) {
         pixel->r = ptr[0];
         pixel->g = ptr[1];
@@ -25,6 +27,10 @@ void setPixelRGBAlpha(color *pixel, unsigned char* ptr) {
         pixel->b = ptr[2];
         pixel->a = ptr[3];
 }
+
+//****************************************************load data from jpg or other image format***********************************************
+//*******       x is the length, y is width. frames is the delays or 帧率.      ****************************  
+
 unsigned char *stbi_xload(char const *filename, int *x, int *y, int *frames, int *channels)
 {
         FILE *f;
